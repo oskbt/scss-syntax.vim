@@ -141,6 +141,7 @@ syn region scssFunctionParams contained start="(" end=")" nextgroup=scssFunction
 syn region scssFunctionBody contained matchgroup=cssBraces start="{" end="}" contains=cssString.*,cssValue.*,@scssControl,scssBooleanOp,scssComment,scssVariable,scssReturn,scssFunction,scssDebug,scssError,scssWarn,scssDefinition,scssInterpolation fold
 syn match scssReturn "@return" contained
 syn match scssExtend "@extend" nextgroup=scssExtendedSelector skipwhite containedin=cssMediaBlock
+syn region scssExtend start=/@media\>/ end=/\ze{/ contains=cssMediaProp,cssValueLength,cssMediaKeyword,cssValueInteger,cssMediaAttr,cssVendor,cssMediaType,cssIncludeKeyword,cssMediaComma,cssComment nextgroup=cssMediaBlock skipwhite containedin=cssMediaBlock
 syn match scssExtendedSelector "[^;]\+" contained contains=cssTagName,cssPseudoClass,scssOptional,scssSelectorChar skipwhite
 syn match scssOptional "!optional" contained
 syn match scssImport "@import" nextgroup=scssImportList
